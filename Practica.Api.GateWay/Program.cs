@@ -13,7 +13,7 @@ var app = builder.Build();
 
 app.UseRouting();
 
-app.UseEndpoints(endpoints => endpoints.MapControllers());
+app.MapControllers();
 
 await app.UseOcelot();
 
