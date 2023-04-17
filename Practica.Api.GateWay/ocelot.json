@@ -1,0 +1,40 @@
+{
+  "Routes": [
+    {
+      "DownstreamPathTemplate": "/apiPruebaUno/PruebaUno",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "practica.api.pruebauno",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/unoWeatherForecast",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "Key": "PruebaUno",
+      "DelegatingHandlers": [
+        "PruebaUnoHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/apiPruebaDos/WeatherForecast",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "practica.api.pruebados",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/dosWeatherForecast",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "Key": "PruebaDos"
+    }
+  ],
+  "Aggregates": [
+    {
+      "RouteKeys": [
+        "PruebaUno",
+        "PruebaDos"
+      ],
+      "UpstreamPathTemplate": "/unoydos"
+    }
+  ]
+}

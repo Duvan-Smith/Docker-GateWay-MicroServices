@@ -1,0 +1,26 @@
+version: '3.4'
+
+services:
+  practica.api.pruebauno:
+    image: ${DOCKER_REGISTRY-}practicaapipruebauno
+    build:
+      context: .
+      dockerfile: Practica.Api.PruebaUno/Dockerfile
+
+  practica.api.pruebados:
+    image: ${DOCKER_REGISTRY-}practicaapipruebados
+    build:
+      context: .
+      dockerfile: Practica.Api.PruebaDos/Dockerfile
+
+  practica.api.gateway:
+    image: ${DOCKER_REGISTRY-}practicaapigateway
+    build:
+      context: .
+      dockerfile: Practica.Api.GateWay/Dockerfile
+
+networks:
+  default:
+    external:
+      name: syp-prueba
+

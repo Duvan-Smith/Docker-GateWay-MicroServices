@@ -1,0 +1,13 @@
+{
+  "profiles": {
+    "Docker Compose": {
+      "commandName": "DockerCompose",
+      "commandVersion": "1.0",
+      "serviceActions": {
+        "practica.api.pruebauno": "StartDebugging",
+        "practica.api.pruebados": "StartDebugging",
+        "practica.api.gateway": "StartDebugging"
+      }
+    }
+  }
+}
